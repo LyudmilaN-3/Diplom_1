@@ -40,8 +40,7 @@ class TestBurger:
         get_burger.bun = get_bun_mock_data
         assert get_burger.get_price() == get_price_burger_mock
 
-    @pytest.mark.parametrize('bun_price', [89.75, 202])
-    @pytest.mark.parametrize('ing_price1, ing_price2', [(54.40, 75), (129.5, 87.80)])
+    @pytest.mark.parametrize('bun_price, ing_price1, ing_price2', [(89.75, 54.40, 75), (202, 129.5, 87.80)])
     def test_get_price(self, get_burger, bun_price, ing_price1, ing_price2):
         mock_bun = Mock()
         mock_bun.price = mock_bun.get_price.return_value = bun_price
